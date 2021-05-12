@@ -1,0 +1,31 @@
+.nuxt-content {
+  @apply relative;
+  & h2 {
+    @apply border-b-2;
+  }
+
+  & .nuxt-content-highlight {
+    @apply relative;
+
+    /* Style filename span added by @nuxt/content */
+    & > .filename {
+      @apply absolute right-0 top-0 text-gray-100 z-10 font-mono text-sm tracking-tight leading-none mr-4 mt-3;
+    }
+
+    /* Add top padding to code blocks with filename */
+    & > .filename + pre[class*='language-'] {
+      @apply pt-8;
+    }
+
+    /* Style copy button added in `pages/_.vue` */
+  }
+
+  /* Force style on pre elements */
+  & pre[class*='language-'] {
+    /* Make pre static so the relative goes to the parent (.nuxt-content-highlight) */
+    @apply bg-gray-800 static;
+  }
+  a {
+    word-break: break-all;
+  }
+}
